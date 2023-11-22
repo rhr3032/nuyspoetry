@@ -8352,7 +8352,7 @@ body {
   color: #666666; }
   body.offcanvas {
     overflow-x: hidden; }
-    body.offcanvas #colorlib-aside {
+    body.offcanvas #nuys-aside {
       -moz-transform: translateX(0);
       -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -8362,7 +8362,7 @@ body {
       background: #fff;
       z-index: 999;
       position: fixed; }
-    body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
+    body.offcanvas #nuys-main, body.offcanvas .nuys-nav-toggle {
       top: 0;
       -moz-transform: translateX(220px);
       -webkit-transform: translateX(220px);
@@ -8387,12 +8387,12 @@ h1, h2, h3, h4, h5,
   font-weight: normal;
   font-family: "Poppins", Arial, sans-serif; }
 
-#colorlib-page {
+#nuys-page {
   width: 100%;
   overflow: hidden;
   position: relative; }
 
-#colorlib-aside {
+#nuys-aside {
   padding-top: 3em;
   padding-bottom: 40px;
   padding-left: 2em;
@@ -8412,10 +8412,10 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   @media (min-width: 992px) {
-    #colorlib-aside {
+    #nuys-aside {
       width: 25%; } }
   @media (max-width: 991.98px) {
-    #colorlib-aside {
+    #nuys-aside {
       width: 270px;
       background: url(../images/aside.png) no-repeat right top #000 !important;
       -moz-transform: translateX(-270px);
@@ -8424,7 +8424,7 @@ h1, h2, h3, h4, h5,
       -o-transform: translateX(-270px);
       transform: translateX(-270px);
       padding-top: 2em; } }
-  #colorlib-aside #colorlib-logo {
+  #nuys-aside #nuys-logo {
     display: block;
     width: 100%;
     font-weight: normal;
@@ -8432,17 +8432,17 @@ h1, h2, h3, h4, h5,
     line-height: .8;
     font-family: "Abril Fatface", cursive; }
     @media (max-width: 1199.98px) {
-      #colorlib-aside #colorlib-logo {
+      #nuys-aside #nuys-logo {
         font-size: 40px; } }
-    #colorlib-aside #colorlib-logo span {
+    #nuys-aside #nuys-logo span {
       display: block; }
     @media (max-width: 991.98px) {
-      #colorlib-aside #colorlib-logo {
+      #nuys-aside #nuys-logo {
         margin-bottom: 20px; } }
     @media (max-width: 767.98px) {
-      #colorlib-aside #colorlib-logo {
+      #nuys-aside #nuys-logo {
         font-size: 50px; } }
-    #colorlib-aside #colorlib-logo a {
+    #nuys-aside #nuys-logo a {
       display: inline-block;
       text-align: left;
       color: #000000;
@@ -8454,10 +8454,10 @@ h1, h2, h3, h4, h5,
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center; }
-  #colorlib-aside #colorlib-main-menu ul {
+  #nuys-aside #nuys-main-menu ul {
     margin: 0;
     padding: 0; }
-    #colorlib-aside #colorlib-main-menu ul li {
+    #nuys-aside #nuys-main-menu ul li {
       margin: 0 0 10px 0;
       padding: 0;
       list-style: none;
@@ -8465,7 +8465,7 @@ h1, h2, h3, h4, h5,
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px; }
-      #colorlib-aside #colorlib-main-menu ul li a {
+      #nuys-aside #nuys-main-menu ul li a {
         color: rgba(255, 255, 255, 0.8);
         text-decoration: none;
         position: relative;
@@ -8476,7 +8476,7 @@ h1, h2, h3, h4, h5,
         -webkit-transition: all 0.3s ease;
         -ms-transition: all 0.3s ease;
         transition: all 0.3s ease; }
-        #colorlib-aside #colorlib-main-menu ul li a:after {
+        #nuys-aside #nuys-main-menu ul li a:after {
           content: "";
           position: absolute;
           height: 2px;
@@ -8495,28 +8495,28 @@ h1, h2, h3, h4, h5,
           -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        #colorlib-aside #colorlib-main-menu ul li a:hover {
+        #nuys-aside #nuys-main-menu ul li a:hover {
           text-decoration: none;
           color: #f3c623; }
-          #colorlib-aside #colorlib-main-menu ul li a:hover:after {
+          #nuys-aside #nuys-main-menu ul li a:hover:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
             -ms-transform: scaleX(1);
             -o-transform: scaleX(1);
             transform: scaleX(1); }
-      #colorlib-aside #colorlib-main-menu ul li.colorlib-active {
+      #nuys-aside #nuys-main-menu ul li.nuys-active {
         font-weight: 600; }
-        #colorlib-aside #colorlib-main-menu ul li.colorlib-active a {
+        #nuys-aside #nuys-main-menu ul li.nuys-active a {
           color: #f3c623; }
-          #colorlib-aside #colorlib-main-menu ul li.colorlib-active a:after {
+          #nuys-aside #nuys-main-menu ul li.nuys-active a:after {
             visibility: visible;
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
             -ms-transform: scaleX(1);
             -o-transform: scaleX(1);
             transform: scaleX(1); }
-  #colorlib-aside .colorlib-footer {
+  #nuys-aside .nuys-footer {
     position: absolute;
     bottom: 20px;
     left: 0;
@@ -8525,26 +8525,26 @@ h1, h2, h3, h4, h5,
     font-size: 17px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.2); }
-    #colorlib-aside .colorlib-footer h3 {
+    #nuys-aside .nuys-footer h3 {
       font-size: 14px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.5);
       font-family: "Poppins", Arial, sans-serif;
       text-transform: uppercase; }
-    #colorlib-aside .colorlib-footer a {
+    #nuys-aside .nuys-footer a {
       color: rgba(255, 255, 255, 0.7); }
-    #colorlib-aside .colorlib-footer .pfooter {
+    #nuys-aside .nuys-footer .pfooter {
       font-size: 14px; }
-    #colorlib-aside .colorlib-footer .colorlib-subscribe-form {
+    #nuys-aside .nuys-footer .nuys-subscribe-form {
       width: 100%; }
-      #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group {
+      #nuys-aside .nuys-footer .nuys-subscribe-form .form-group {
         position: relative;
         margin-bottom: 0;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         border-radius: 0; }
-        #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input {
+        #nuys-aside .nuys-footer .nuys-subscribe-form .form-group input {
           padding-right: 40px;
           background: transparent !important;
           border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -8554,22 +8554,22 @@ h1, h2, h3, h4, h5,
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           border-radius: 0; }
-          #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input::-webkit-input-placeholder {
+          #nuys-aside .nuys-footer .nuys-subscribe-form .form-group input::-webkit-input-placeholder {
             /* Chrome/Opera/Safari */
             color: rgba(255, 255, 255, 0.4) !important; }
-          #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input::-moz-placeholder {
+          #nuys-aside .nuys-footer .nuys-subscribe-form .form-group input::-moz-placeholder {
             /* Firefox 19+ */
             color: rgba(255, 255, 255, 0.4) !important; }
-          #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input:-ms-input-placeholder {
+          #nuys-aside .nuys-footer .nuys-subscribe-form .form-group input:-ms-input-placeholder {
             /* IE 10+ */
             color: rgba(255, 255, 255, 0.4) !important; }
-          #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group input:-moz-placeholder {
+          #nuys-aside .nuys-footer .nuys-subscribe-form .form-group input:-moz-placeholder {
             /* Firefox 18- */
             color: rgba(255, 255, 255, 0.4) !important; }
-        #colorlib-aside .colorlib-footer .colorlib-subscribe-form .form-group .form-control {
+        #nuys-aside .nuys-footer .nuys-subscribe-form .form-group .form-control {
           bordeR: 1px solid rgba(255, 255, 255, 0.2);
           font-weight: 400; }
-      #colorlib-aside .colorlib-footer .colorlib-subscribe-form .icon {
+      #nuys-aside .nuys-footer .nuys-subscribe-form .icon {
         position: absolute;
         top: 50%;
         right: 15px;
@@ -8578,7 +8578,7 @@ h1, h2, h3, h4, h5,
         transform: translateY(-50%);
         color: rgba(0, 0, 0, 0.5); }
 
-#colorlib-main {
+#nuys-main {
   width: 100%;
   float: right;
   -moz-transition: all 0.5s ease;
@@ -8587,20 +8587,20 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   @media (min-width: 992px) {
-    #colorlib-main {
+    #nuys-main {
       width: 75%; } }
 
-.colorlib-nav-toggle {
+.nuys-nav-toggle {
   cursor: pointer;
   text-decoration: none; }
-  .colorlib-nav-toggle.active i::before, .colorlib-nav-toggle.active i::after {
+  .nuys-nav-toggle.active i::before, .nuys-nav-toggle.active i::after {
     background: #fff; }
-  .colorlib-nav-toggle.dark.active i::before, .colorlib-nav-toggle.dark.active i::after {
+  .nuys-nav-toggle.dark.active i::before, .nuys-nav-toggle.dark.active i::after {
     background: #fff; }
-  .colorlib-nav-toggle:hover, .colorlib-nav-toggle:focus, .colorlib-nav-toggle:active {
+  .nuys-nav-toggle:hover, .nuys-nav-toggle:focus, .nuys-nav-toggle:active {
     outline: none;
     border-bottom: none !important; }
-  .colorlib-nav-toggle i {
+  .nuys-nav-toggle i {
     position: relative;
     display: inline-block;
     width: 20px;
@@ -8613,7 +8613,7 @@ h1, h2, h3, h4, h5,
     -webkit-transition: all .2s ease-out;
     -o-transition: all .2s ease-out;
     transition: all .2s ease-out; }
-    .colorlib-nav-toggle i::before, .colorlib-nav-toggle i::after {
+    .nuys-nav-toggle i::before, .nuys-nav-toggle i::after {
       content: '';
       width: 20px;
       height: 2px;
@@ -8625,14 +8625,14 @@ h1, h2, h3, h4, h5,
       -webkit-transition: all 0.2s ease;
       -ms-transition: all 0.2s ease;
       transition: all 0.2s ease; }
-  .colorlib-nav-toggle.dark i {
+  .nuys-nav-toggle.dark i {
     position: relative;
     color: #000000;
     background: #000000;
     -webkit-transition: all .2s ease-out;
     -o-transition: all .2s ease-out;
     transition: all .2s ease-out; }
-    .colorlib-nav-toggle.dark i::before, .colorlib-nav-toggle.dark i::after {
+    .nuys-nav-toggle.dark i::before, .nuys-nav-toggle.dark i::after {
       background: #000000;
       -moz-transition: all 0.2s ease;
       -o-transition: all 0.2s ease;
@@ -8640,22 +8640,22 @@ h1, h2, h3, h4, h5,
       -ms-transition: all 0.2s ease;
       transition: all 0.2s ease; }
 
-.colorlib-nav-toggle i::before {
+.nuys-nav-toggle i::before {
   top: -7px; }
 
-.colorlib-nav-toggle i::after {
+.nuys-nav-toggle i::after {
   bottom: -7px; }
 
-.colorlib-nav-toggle:hover i::before {
+.nuys-nav-toggle:hover i::before {
   top: -8px; }
 
-.colorlib-nav-toggle:hover i::after {
+.nuys-nav-toggle:hover i::after {
   bottom: -8px; }
 
-.colorlib-nav-toggle.active i {
+.nuys-nav-toggle.active i {
   background: transparent; }
 
-.colorlib-nav-toggle.active i::before {
+.nuys-nav-toggle.active i::before {
   top: 0;
   -webkit-transform: rotateZ(45deg);
   -moz-transform: rotateZ(45deg);
@@ -8663,7 +8663,7 @@ h1, h2, h3, h4, h5,
   -o-transform: rotateZ(45deg);
   transform: rotateZ(45deg); }
 
-.colorlib-nav-toggle.active i::after {
+.nuys-nav-toggle.active i::after {
   bottom: 0;
   -webkit-transform: rotateZ(-45deg);
   -moz-transform: rotateZ(-45deg);
@@ -8671,7 +8671,7 @@ h1, h2, h3, h4, h5,
   -o-transform: rotateZ(-45deg);
   transform: rotateZ(-45deg); }
 
-.colorlib-nav-toggle {
+.nuys-nav-toggle {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -8686,7 +8686,7 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   @media (max-width: 991.98px) {
-    .colorlib-nav-toggle {
+    .nuys-nav-toggle {
       opacity: 1;
       visibility: visible; } }
 

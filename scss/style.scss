@@ -47,14 +47,14 @@ body {
 	color: lighten($black,40%);
 	&.offcanvas {
 		overflow-x: hidden;
-		#colorlib-aside {
+		#nuys-aside {
 			@include translateX(0);
 			width: 270px;
 			background: $white;
 			z-index: 999;
 			position: fixed;
 		}
-		#colorlib-main, .colorlib-nav-toggle {
+		#nuys-main, .nuys-nav-toggle {
 			top: 0;
 			@include translateX(220px);
 		}
@@ -79,14 +79,14 @@ h1, h2, h3, h4, h5,
 
 
 
-#colorlib-page {
+#nuys-page {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
 
-#colorlib-aside {
+#nuys-aside {
 	padding-top: 3em;
 	padding-bottom: 40px;
 	padding-left: 2em;
@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5,
 		@include translateX(-270px);
 		padding-top: 2em;
 	}
-	#colorlib-logo {
+	#nuys-logo {
 		display: block;
 		width: 100%;
 		font-weight: normal;
@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5,
 			background-position: center center;
 		}
 	}
-	#colorlib-main-menu {
+	#nuys-main-menu {
 		ul {
 			margin: 0;
 			padding: 0;
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5,
 						}
 					}
 				}
-				&.colorlib-active {
+				&.nuys-active {
 					font-weight: 600;
 					a {
 						color: $primary;
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5,
 			}
 		}
 	}
-	.colorlib-footer {
+	.nuys-footer {
 		position: absolute;
 		bottom: 20px;
 		left: 0;
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5,
 		.pfooter{
 			font-size: 14px;
 		}
-		.colorlib-subscribe-form{
+		.nuys-subscribe-form{
 			width: 100%;
 			.form-group {
 				position: relative;
@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-#colorlib-main {
+#nuys-main {
 	width: 100%;
 	float: right;
 	@include transition(.5s);
@@ -293,7 +293,7 @@ h1, h2, h3, h4, h5,
 
 
 // Burger Menu
-.colorlib-nav-toggle {
+.nuys-nav-toggle {
   cursor: pointer;
   text-decoration: none;
   &.active i {
@@ -347,22 +347,22 @@ h1, h2, h3, h4, h5,
   }
 }
 
-.colorlib-nav-toggle i::before {
+.nuys-nav-toggle i::before {
   top: -7px;
 }
-.colorlib-nav-toggle i::after {
+.nuys-nav-toggle i::after {
   bottom: -7px;
 }
-.colorlib-nav-toggle:hover i::before {
+.nuys-nav-toggle:hover i::before {
   top: -8px;
 }
-.colorlib-nav-toggle:hover i::after {
+.nuys-nav-toggle:hover i::after {
   bottom: -8px;
 }
-.colorlib-nav-toggle.active i {
+.nuys-nav-toggle.active i {
 	background: transparent;
 }
-.colorlib-nav-toggle.active i::before {
+.nuys-nav-toggle.active i::before {
   top:0;
   -webkit-transform: rotateZ(45deg);
      -moz-transform: rotateZ(45deg);
@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5,
        -o-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
-.colorlib-nav-toggle.active i::after {
+.nuys-nav-toggle.active i::after {
   bottom:0;
   -webkit-transform: rotateZ(-45deg);
      -moz-transform: rotateZ(-45deg);
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5,
        -o-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
 }
-.colorlib-nav-toggle {
+.nuys-nav-toggle {
 	position: fixed;
 	left: 0px;
 	top: 0px;
