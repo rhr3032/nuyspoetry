@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { Post } from "@prisma/client";
 
 import { PostCard } from "@/components/PostCard";
 import { prisma } from "@/lib/prisma";
@@ -18,18 +19,25 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [latestPoems, latestArticles] = await Promise.all([
-    prisma.post.findMany({
-      where: { type: { in: ["bengali_poem", "english_poem"] } },
-      orderBy: { publishedDate: "desc" },
-      take: 3,
-    }),
-    prisma.post.findMany({
-      where: { type: "article" },
-      orderBy: { publishedDate: "desc" },
-      take: 3,
-    }),
-  ]);
+  let latestPoems: Post[] = [];
+  let latestArticles: Post[] = [];
+
+  try {
+    [latestPoems, latestArticles] = await Promise.all([
+      prisma.post.findMany({
+        where: { type: { in: ["bengali_poem", "english_poem"] } },
+        orderBy: { publishedDate: "desc" },
+        take: 3,
+      }),
+      prisma.post.findMany({
+        where: { type: "article" },
+        orderBy: { publishedDate: "desc" },
+        take: 3,
+      }),
+    ]);
+  } catch (error) {
+    console.error("Failed to load home page posts:", error);
+  }
 
   return (
     <>
@@ -136,11 +144,17 @@ export default async function Home() {
             Browse all poems
           </Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {latestPoems.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+        {latestPoems.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-stone-300 bg-white/60 p-8 text-stone-700">
+            No poems available right now.
+          </div>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-3">
+            {latestPoems.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-6 pb-16">
@@ -153,11 +167,17 @@ export default async function Home() {
             Browse all essays
           </Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {latestArticles.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
+        {latestArticles.length === 0 ? (
+          <div className="rounded-2xl border border-dashed border-stone-300 bg-white/60 p-8 text-stone-700">
+            No essays available right now.
+          </div>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-3">
+            {latestArticles.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

@@ -86,16 +86,23 @@ export default async function WritingsPage({ searchParams }: WritingsPageProps) 
           ? { type: "article" as const }
           : {};
 
-  const [posts, groupedCounts] = await Promise.all([
-    prisma.post.findMany({
-      where: whereClause,
-      orderBy: { publishedDate: "desc" },
-    }),
-    prisma.post.groupBy({
-      by: ["type"],
-      _count: { _all: true },
-    }),
-  ]);
+  let posts: Awaited<ReturnType<typeof prisma.post.findMany>> = [];
+  let groupedCounts: Awaited<ReturnType<typeof prisma.post.groupBy>> = [];
+
+  try {
+    [posts, groupedCounts] = await Promise.all([
+      prisma.post.findMany({
+        where: whereClause,
+        orderBy: { publishedDate: "desc" },
+      }),
+      prisma.post.groupBy({
+        by: ["type"],
+        _count: { _all: true },
+      }),
+    ]);
+  } catch (error) {
+    console.error("Failed to load writings page posts:", error);
+  }
 
   const countsByType = {
     bangla: groupedCounts.find((item) => item.type === "bengali_poem")?._count._all ?? 0,
