@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import type { PostType } from "@prisma/client";
 
 import { WritingsLibrary } from "@/components/WritingsLibrary";
 import { prisma } from "@/lib/prisma";
@@ -87,7 +88,7 @@ export default async function WritingsPage({ searchParams }: WritingsPageProps) 
           : {};
 
   let posts: Awaited<ReturnType<typeof prisma.post.findMany>> = [];
-  let groupedCounts: Awaited<ReturnType<typeof prisma.post.groupBy>> = [];
+  let groupedCounts: Array<{ type: PostType; _count: { _all: number } }> = [];
 
   try {
     [posts, groupedCounts] = await Promise.all([
