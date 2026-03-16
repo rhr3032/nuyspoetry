@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Noto_Serif_Bengali } from "next/font/google";
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { getSiteOrigin } from "@/lib/site-url";
 import "react-quill-new/dist/quill.snow.css";
 import "./globals.css";
 
@@ -18,13 +19,15 @@ const bodyFont = Noto_Serif_Bengali({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteOrigin = getSiteOrigin();
+
 export const metadata: Metadata = {
   title: {
     default: "Nuy's Poetry",
     template: "%s | Nuy's Poetry",
   },
   description: "A personal platform for publishing Bengali poems, English poems, and literary essays.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteOrigin),
   openGraph: {
     title: "Nuy's Poetry",
     description: "Read poems and essays by Nuy.",
