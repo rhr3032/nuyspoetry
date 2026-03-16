@@ -49,13 +49,13 @@ export function Navbar() {
 
   return (
     <header className="pointer-events-none fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-4">
-      <nav className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/60 bg-white/30 px-3 py-2.5 shadow-[0_8px_40px_rgba(28,25,23,0.18),inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-xl">
+      <nav className="pointer-events-auto flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-3 py-2 shadow-[0_10px_30px_rgba(28,25,23,0.14),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-xl">
         {/* Brand capsule */}
         <Link
           href="/"
           className="flex items-center gap-2 rounded-full bg-stone-900 px-4 py-2 shadow-[0_4px_14px_rgba(28,25,23,0.35)] transition hover:bg-stone-700"
         >
-          <span className="text-sm font-semibold tracking-wide text-white">Nuy&apos;s Poetry</span>
+          <span className="text-sm font-semibold tracking-wide text-white">NUYs Poetry</span>
         </Link>
 
         {/* Divider */}

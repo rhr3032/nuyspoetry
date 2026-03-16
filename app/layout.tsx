@@ -45,7 +45,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
         <div className="min-h-screen bg-[linear-gradient(180deg,#fffaf0_0%,#fff8ee_40%,#fffdf8_100%)] text-stone-900">
           <Navbar />
-          <main className="pt-16 md:pt-20">
+          <main className="pt-16 md:pt-20 [&>*:first-child]:-mt-16 [&>*:first-child]:pt-16 md:[&>*:first-child]:-mt-20 md:[&>*:first-child]:pt-20">
             {children}
           </main>
           <Footer />

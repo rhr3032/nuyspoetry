@@ -59,7 +59,7 @@ export default function AboutPage() {
           <div className="rounded-4xl border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
             <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/40">
               <Image
-                src="https://images.unsplash.com/photo-1615109398623-88346a601842?auto=format&fit=crop&w=1200&q=80"
+                src="/poet-portrait.png"
                 alt="Poet portrait"
                 width={900}
                 height={1100}

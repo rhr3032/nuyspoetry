@@ -117,7 +117,7 @@ export default async function Home() {
           <div className="rounded-4xl border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
             <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/40">
               <Image
-                src="/poet-portrait.svg"
+                src="/poet-portrait.png"
                 alt="Poet portrait"
                 width={900}
                 height={1100}
