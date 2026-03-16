@@ -39,7 +39,25 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (error) {
+    console.error("Login API error:", error);
+
+    const message = error instanceof Error ? error.message : "";
+
+    if (message.includes("JWT_SECRET")) {
+      return NextResponse.json(
+        { error: "Server configuration error: JWT_SECRET is missing." },
+        { status: 500 }
+      );
+    }
+
+    if (message.includes("DATABASE_URL") || message.toLowerCase().includes("prisma")) {
+      return NextResponse.json(
+        { error: "Database connection error. Please try again shortly." },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
   }
 }

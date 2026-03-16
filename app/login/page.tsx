@@ -39,7 +39,7 @@ export default function LoginPage() {
     <section className="mx-auto flex min-h-[70vh] w-full max-w-6xl items-center px-6 py-16">
       <div className="mx-auto w-full max-w-md rounded-2xl border border-amber-200 bg-white/90 p-8 shadow-sm">
         <h1 className="text-3xl font-semibold text-stone-900">Admin Login</h1>
-        <p className="mt-2 text-stone-600">Sign in to manage poems and articles.</p>
+        <p className="mt-2 text-stone-600">Sign in to manage poems and essays.</p>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <label className="block space-y-1">
