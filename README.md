@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nuy's Poetry
 
-## Getting Started
+A full-stack poetry publishing platform built with Next.js App Router, TypeScript, Tailwind CSS, Prisma ORM, PostgreSQL, JWT auth, and TipTap rich text editor.
 
-First, run the development server:
+## Features
+
+- Public pages: Home, About, Bengali Poems, English Poems, Articles, Post detail, Contact
+- Admin auth with JWT stored in HTTP-only cookies
+- Protected dashboard for creating, editing, and deleting posts
+- Prisma + PostgreSQL models for `User` and `Post`
+- Rich text editor with poetry-friendly line break support
+- SEO support: page metadata, Open Graph tags, sitemap, robots
+- Vercel-ready setup
+
+## Tech Stack
+
+- Next.js 16 (App Router, compatible with 14+ architecture)
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- PostgreSQL
+- JWT + bcryptjs
+- TipTap editor
+
+## Environment Variables
+
+Copy `.env.example` to `.env` and update values:
+
+```bash
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/nuyspoetry?schema=public"
+JWT_SECRET="replace-with-a-long-random-secret"
+ADMIN_USERNAME="admin"
+ADMIN_PASSWORD="admin123"
+NEXT_PUBLIC_SITE_URL="http://localhost:3000"
+```
+
+## Local Development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Generate Prisma client:
+
+```bash
+npm run prisma:generate
+```
+
+3. Run migrations:
+
+```bash
+npm run prisma:migrate -- --name init
+```
+
+4. Seed the admin user:
+
+```bash
+npm run prisma:seed
+```
+
+5. Start dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `POST /api/login` - authenticate admin and set auth cookie
+- `GET /api/posts` - fetch all posts (public)
+- `POST /api/posts` - create post (admin)
+- `PUT /api/posts/[id]` - update post (admin)
+- `DELETE /api/posts/[id]` - delete post (admin)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Post Types
 
-## Learn More
+- `bengali_poem`
+- `english_poem`
+- `article`
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment on Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push the repository to GitHub.
+2. Import the project into Vercel.
+3. Set environment variables in Vercel Project Settings:
+	- `DATABASE_URL`
+	- `JWT_SECRET`
+	- `ADMIN_USERNAME`
+	- `ADMIN_PASSWORD`
+	- `NEXT_PUBLIC_SITE_URL`
+4. Run Prisma migration in your production database:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npx prisma migrate deploy
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The app is configured to run `prisma generate` automatically during install via `postinstall`.

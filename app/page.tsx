@@ -1,65 +1,164 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import { PostCard } from "@/components/PostCard";
+import { prisma } from "@/lib/prisma";
+
+export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Nuy's Poetry | Home",
+  description: "A bilingual poetry and essay platform for Bengali and English literary works.",
+  openGraph: {
+    title: "Nuy's Poetry",
+    description: "Read Bengali poems, English poems, and reflective essays.",
+    type: "website",
+  },
+};
+
+export default async function Home() {
+  const [latestPoems, latestArticles] = await Promise.all([
+    prisma.post.findMany({
+      where: { type: { in: ["bengali_poem", "english_poem"] } },
+      orderBy: { publishedDate: "desc" },
+      take: 3,
+    }),
+    prisma.post.findMany({
+      where: { type: "article" },
+      orderBy: { publishedDate: "desc" },
+      take: 3,
+    }),
+  ]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      <section className="relative overflow-hidden border-b border-amber-200/60">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(245,158,11,0.18),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(251,113,133,0.16),transparent_42%)]" />
+        <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
+          <p className="text-sm uppercase tracking-[0.3em] text-stone-600">Bengali & English Literary Journal</p>
+          <h1 className="mt-6 max-w-3xl text-5xl font-semibold leading-tight text-stone-900 md:text-6xl">
+            Where poems breathe in two languages.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+            Explore contemporary Bengali and English poetry, alongside essays on craft, place, and the living pulse of language.
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/writings?type=bangla"
+              className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white hover:bg-stone-700"
+            >
+              Read Bangla Poems
+            </Link>
+            <Link
+              href="/writings?type=essay"
+              className="rounded-full border border-stone-300 bg-white/80 px-6 py-3 text-sm font-medium text-stone-800 hover:bg-stone-100"
+            >
+              Read Essays
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-6 py-14">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
+          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">Poet Portfolio</p>
+            <h2 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] text-stone-900 md:text-6xl">
+              Writing a life across memory, language, and silence.
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+              Nuy writes in Bangla and English, shaping poems and essays from longing, weather, distance,
+              and the private music of inner life. This page gathers the voice, practice, and literary path
+              in one portfolio-style portrait.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/writings"
+                className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-stone-700"
+              >
+                Explore Writings
+              </Link>
+              <Link
+                href="/writings?type=essay"
+                className="rounded-full border border-stone-300/80 bg-white/80 px-6 py-3 text-sm font-medium text-stone-800 transition hover:bg-white"
+              >
+                Read Essays
+              </Link>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-white/70 bg-white/55 p-5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Languages</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Bangla + English</p>
+              </div>
+              <div className="rounded-2xl border border-white/70 bg-white/55 p-5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Forms</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Poems + Essays</p>
+              </div>
+              <div className="rounded-2xl border border-white/70 bg-white/55 p-5 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Practice</p>
+                <p className="mt-3 text-2xl font-semibold text-stone-900">Reading, mentoring, reflection</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
+            <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/40">
+              <Image
+                src="/poet-portrait.svg"
+                alt="Poet portrait"
+                width={900}
+                height={1100}
+                className="h-[26rem] w-full object-cover"
+              />
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-white/70 bg-white/60 p-5 backdrop-blur-sm">
+              <p className="text-xs uppercase tracking-[0.24em] text-stone-500">Artist Statement</p>
+              <p className="mt-3 text-base leading-8 text-stone-700">
+                The work moves between tenderness and distance, using image, place, and stillness to reveal
+                what ordinary speech often leaves unnamed.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-6 py-16">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-semibold text-stone-900">Latest Poems</h2>
+            <p className="mt-2 text-stone-700">Recent Bengali and English works from the poet.</p>
+          </div>
+          <Link href="/writings" className="text-sm font-medium text-stone-700 underline">
+            Browse all poems
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {latestPoems.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-6 pb-16">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-semibold text-stone-900">Latest Essays</h2>
+            <p className="mt-2 text-stone-700">Essays and reflections on poetry and life.</p>
+          </div>
+          <Link href="/writings?type=essay" className="text-sm font-medium text-stone-700 underline">
+            Browse all essays
+          </Link>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {latestArticles.map((post) => (
+            <PostCard key={post.id} post={post} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
