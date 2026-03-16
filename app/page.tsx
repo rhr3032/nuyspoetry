@@ -72,7 +72,7 @@ export default async function Home() {
 
       <section className="mx-auto w-full max-w-7xl px-6 py-14">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-10">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">Poet Portfolio</p>
             <h2 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] text-stone-900 md:text-6xl">
               Writing a life across memory, language, and silence.
@@ -114,14 +114,14 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
             <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/40">
               <Image
                 src="/poet-portrait.svg"
                 alt="Poet portrait"
                 width={900}
                 height={1100}
-                className="h-[26rem] w-full object-cover"
+                className="h-104 w-full object-cover"
               />
             </div>
 

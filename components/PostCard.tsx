@@ -29,7 +29,7 @@ export function PostCard({ post }: PostCardProps) {
       <p className="mt-3 text-sm text-stone-500">
         {new Date(post.publishedDate).toLocaleDateString()} • {post.place}
       </p>
-      <p className="mt-4 overflow-hidden break-words text-base leading-8 text-stone-700 [overflow-wrap:anywhere]">
+      <p className="mt-4 overflow-hidden wrap-anywhere text-base leading-8 text-stone-700">
         {previewText}
         {hasMoreText ? "..." : ""}
       </p>

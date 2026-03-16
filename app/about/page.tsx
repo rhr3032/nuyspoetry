@@ -14,7 +14,7 @@ export default function AboutPage() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6 py-14">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-10">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-600">Poet Portfolio</p>
             <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] text-stone-900 md:text-6xl">
               Writing a life across memory, language, and silence.
@@ -56,14 +56,14 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-6 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
             <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white/40">
               <Image
                 src="https://images.unsplash.com/photo-1615109398623-88346a601842?auto=format&fit=crop&w=1200&q=80"
                 alt="Poet portrait"
                 width={900}
                 height={1100}
-                className="h-[26rem] w-full object-cover"
+                className="h-104 w-full object-cover"
                 priority
               />
             </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Themes</p>
             <h2 className="mt-4 text-3xl font-semibold text-stone-900">The emotional geography of the work</h2>
             <div className="mt-6 grid gap-4">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
+          <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Journey</p>
             <h2 className="mt-4 text-3xl font-semibold text-stone-900">A one-page literary profile</h2>
             <div className="mt-8 space-y-6 border-l border-stone-300/70 pl-6">
@@ -136,7 +136,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
+        <div className="mt-8 rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Selected Focus</p>
@@ -171,7 +171,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-[2rem] border border-white/60 bg-stone-900 px-8 py-10 text-white shadow-[0_18px_50px_rgba(28,25,23,0.18)]">
+        <div className="mt-8 rounded-4xl border border-white/60 bg-stone-900 px-8 py-10 text-white shadow-[0_18px_50px_rgba(28,25,23,0.18)]">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-300">Next Step</p>

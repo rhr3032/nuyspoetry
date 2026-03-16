@@ -50,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem] border border-white/60 bg-white/45 p-7 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
+    <form onSubmit={handleSubmit} className="rounded-4xl border border-white/60 bg-white/45 p-7 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md md:p-8">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Send a Message</p>

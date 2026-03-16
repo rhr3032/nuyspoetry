@@ -16,7 +16,7 @@ export default function ContactPage() {
       <div className="relative mx-auto w-full max-w-7xl px-6 py-14">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-8">
-            <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
+            <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Contact</p>
               <h1 className="mt-4 text-5xl font-semibold leading-[1.08] text-stone-900 md:text-6xl">
                 Let&apos;s talk about poems, essays, readings, and literary work.
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 <a
                   href="https://wa.me/8801795408194"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="mt-3 block text-xl font-semibold text-stone-900 hover:text-stone-700"
                 >
                   WhatsApp
@@ -54,13 +54,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
+            <div className="rounded-4xl border border-white/60 bg-white/45 p-8 shadow-[0_18px_50px_rgba(28,25,23,0.12)] backdrop-blur-md">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">Social Links</p>
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 <a
                   href="https://facebook.com/nuyspoetry"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group rounded-2xl border border-white/70 bg-white/60 p-5 transition hover:bg-white/80 hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <a
                   href="https://instagram.com/nuyspoetry"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group rounded-2xl border border-white/70 bg-white/60 p-5 transition hover:bg-white/80 hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <a
                   href="https://threads.net/@nuyspoetry"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group rounded-2xl border border-white/70 bg-white/60 p-5 transition hover:bg-white/80 hover:shadow-md"
                 >
                   <div className="flex items-center gap-3">
