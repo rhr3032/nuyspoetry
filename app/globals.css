@@ -70,3 +70,12 @@ h4 {
 .poem-content {
   line-height: 1.75;
 }
+
+/* Hide global chrome on dashboard route */
+body:has([data-dashboard-page]) header {
+  display: none;
+}
+
+body:has([data-dashboard-page]) footer {
+  display: none;
+}

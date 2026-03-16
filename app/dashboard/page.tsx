@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { DashboardClient } from "@/components/DashboardClient";
@@ -24,10 +25,12 @@ export default async function DashboardPage() {
   });
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-6 py-16">
+    <section className="mx-auto w-full max-w-6xl px-6 py-16" data-dashboard-page>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-4xl font-semibold text-stone-900">Admin Dashboard</h1>
-        <p className="rounded-full bg-amber-100 px-4 py-2 text-sm text-stone-700">Logged in as {auth.username}</p>
+        <Link href="/" className="rounded-full bg-amber-100 px-4 py-2 text-sm font-medium text-stone-700 hover:bg-amber-200">
+          Back to Home
+        </Link>
       </div>
       <DashboardClient initialPosts={posts} />
     </section>
