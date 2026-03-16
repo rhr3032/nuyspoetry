@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const contactEmail = "poet@example.com";
+const contactEmail = "raisulhasanrafi3032@gmail.com";
 
 type FormState = {
   name: string;
@@ -117,33 +117,6 @@ export function ContactForm() {
           Send Message
         </button>
         <p className="text-sm text-stone-600">Your message will open in your default email app, ready to send.</p>
-      </div>
-
-      <div className="mt-8 border-t border-stone-200/70 pt-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">Common reasons to write</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {[
-            "Poetry reading invitation",
-            "Literary collaboration",
-            "Workshop or masterclass",
-            "Magazine or journal feature",
-            "Interview or podcast",
-            "Translation inquiry",
-            "Book project",
-            "Student research",
-            "General correspondence",
-          ].map((topic) => (
-            <button
-              key={topic}
-              type="button"
-              onClick={() => updateField("subject", topic)}
-              className="rounded-full border border-stone-200/90 bg-white/70 px-3 py-1.5 text-xs text-stone-700 transition hover:border-amber-200 hover:bg-amber-50"
-            >
-              {topic}
-            </button>
-          ))}
-        </div>
-        <p className="mt-3 text-xs text-stone-500">Click a topic to prefill the subject line.</p>
       </div>
 
       <div className="mt-6 rounded-2xl border border-amber-100/80 bg-amber-50/50 px-6 py-5">

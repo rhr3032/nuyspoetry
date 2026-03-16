@@ -53,16 +53,18 @@ export default async function Home() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
-              href="/writings?type=bangla"
+              href="https://rhrafi3032.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
               className="rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-white hover:bg-stone-700"
             >
-              Read Bangla Poems
+              Visit Portfolio
             </Link>
             <Link
-              href="/writings?type=essay"
+              href="/about"
               className="rounded-full border border-stone-300 bg-white/80 px-6 py-3 text-sm font-medium text-stone-800 hover:bg-stone-100"
             >
-              Read Essays
+              Explore More
             </Link>
           </div>
         </div>
