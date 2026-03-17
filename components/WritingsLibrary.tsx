@@ -9,7 +9,16 @@ type WritingsLibraryProps = {
   posts: Post[];
   title: string;
   description: string;
+  sortBy: SortKey;
 };
+
+export type SortKey =
+  | "newest"
+  | "oldest"
+  | "title-asc"
+  | "title-desc"
+  | "author-asc"
+  | "author-desc";
 
 function getSearchableText(post: Post) {
   const plainContent = post.content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
@@ -17,7 +26,7 @@ function getSearchableText(post: Post) {
   return [post.title, post.author, post.place, plainContent].join(" ").toLowerCase();
 }
 
-export function WritingsLibrary({ posts, title, description }: WritingsLibraryProps) {
+export function WritingsLibrary({ posts, title, description, sortBy }: WritingsLibraryProps) {
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
   const normalizedQuery = deferredQuery.trim().toLowerCase();
@@ -29,6 +38,32 @@ export function WritingsLibrary({ posts, title, description }: WritingsLibraryPr
 
     return posts.filter((post) => getSearchableText(post).includes(normalizedQuery));
   }, [normalizedQuery, posts]);
+
+  const filteredAndSortedPosts = useMemo(() => {
+    const results = [...filteredPosts];
+
+    const byDate = (a: Post, b: Post) =>
+      new Date(a.publishedDate).getTime() - new Date(b.publishedDate).getTime();
+
+    const byTitle = (a: Post, b: Post) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" });
+    const byAuthor = (a: Post, b: Post) => a.author.localeCompare(b.author, undefined, { sensitivity: "base" });
+
+    if (sortBy === "oldest") {
+      results.sort(byDate);
+    } else if (sortBy === "title-asc") {
+      results.sort(byTitle);
+    } else if (sortBy === "title-desc") {
+      results.sort((a, b) => byTitle(b, a));
+    } else if (sortBy === "author-asc") {
+      results.sort(byAuthor);
+    } else if (sortBy === "author-desc") {
+      results.sort((a, b) => byAuthor(b, a));
+    } else {
+      results.sort((a, b) => byDate(b, a));
+    }
+
+    return results;
+  }, [filteredPosts, sortBy]);
 
   return (
     <div>
@@ -60,7 +95,7 @@ export function WritingsLibrary({ posts, title, description }: WritingsLibraryPr
         <div className="mt-5 flex items-center justify-between gap-4 text-sm text-stone-600">
           <p>
             {normalizedQuery
-              ? `${filteredPosts.length} result${filteredPosts.length === 1 ? "" : "s"} for \"${deferredQuery.trim()}\"`
+              ? `${filteredAndSortedPosts.length} result${filteredAndSortedPosts.length === 1 ? "" : "s"} for \"${deferredQuery.trim()}\"`
               : `${posts.length} writing${posts.length === 1 ? "" : "s"} in this view`}
           </p>
           {query ? (
@@ -75,13 +110,13 @@ export function WritingsLibrary({ posts, title, description }: WritingsLibraryPr
         </div>
       </div>
 
-      {filteredPosts.length === 0 ? (
+      {filteredAndSortedPosts.length === 0 ? (
         <div className="mt-8 rounded-2xl border border-dashed border-stone-300 bg-white/60 p-8 text-stone-700 backdrop-blur">
           No writings matched your search.
         </div>
       ) : (
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {filteredPosts.map((post) => (
+          {filteredAndSortedPosts.map((post) => (
             <PostCard key={post.id} post={post} />
           ))}
         </div>
