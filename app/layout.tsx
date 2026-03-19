@@ -42,6 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body suppressHydrationWarning className={`${titleFont.variable} ${bodyFont.variable} antialiased`}>
         <div className="min-h-screen bg-[linear-gradient(180deg,#fffaf0_0%,#fff8ee_40%,#fffdf8_100%)] text-stone-900">
           <Navbar />
